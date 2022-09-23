@@ -2,8 +2,19 @@ $base_font: 'Roboto', sans-serif;
 $logo_font: 'Shrikhand', cursive;
 $title_font: 'Shrikhand', cursive;
 
+$scale-100: 0.512rem;
+$scale-200: 0.64rem;
+$scale-300: 0.8rem;
+$scale-400: 1rem;
+$scale-500: 1.25rem;
+$scale-600: 1.563rem;
+$scale-700: 1.953rem;
+$scale-800: 2.441rem;
+$scale-900: 3.052rem;
+
 body {
   font-family: $base_font;
+  font-size: $scale-400;
 }
 
 h1,
