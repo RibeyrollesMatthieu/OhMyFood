@@ -1,0 +1,71 @@
+@use './../abstracts/spacings' as spacings;
+@use './../abstracts/colors' as colors;
+@use './../abstracts/mixins' as mixins;
+
+.homepage {
+  .section-title {
+    margin-bottom: spacings.$spacing-400;
+  }
+
+  .location {
+    & > span {
+      margin-right: spacings.$spacing-400;
+    }
+
+    background-color: colors.$background-medium;
+    text-align: center;
+    padding: spacings.$spacing-300 spacings.$spacing-400;
+  }
+
+  .explore {
+    text-align: center;
+    padding: spacings.$spacing-500;
+    background: linear-gradient(
+      to bottom,
+      colors.$background-light,
+      colors.$background-medium
+    );
+
+    &__description {
+      color: colors.$text-medium;
+      margin-top: spacings.$spacing-400;
+      margin-bottom: spacings.$spacing-500;
+      font-weight: 500;
+    }
+
+    &__cta {
+      @include mixins.cta();
+      margin-bottom: spacings.$spacing-500;
+    }
+  }
+
+  .helper {
+    padding: spacings.$spacing-500 spacings.$spacing-400 spacings.$spacing-600;
+
+    &__list {
+      padding-left: spacings.$spacing-400;
+      & > * + * {
+        margin-top: spacings.$spacing-400;
+      }
+
+      &-item {
+        @include mixins.ol-list-item(attr(item));
+
+        & > span {
+          width: 1rem;
+          margin: 0 spacings.$spacing-400 0;
+          color: colors.$text-medium;
+        }
+      }
+    }
+  }
+
+  .discover {
+    padding: spacings.$spacing-500 spacings.$spacing-400;
+    background-color: colors.$background-medium;
+
+    .restaurant-card + .restaurant-card {
+      margin-top: spacings.$spacing-400;
+    }
+  }
+}

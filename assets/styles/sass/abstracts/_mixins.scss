@@ -1,0 +1,43 @@
+@use './colors' as colors;
+@use './spacings' as spacings;
+
+@mixin unstyled-button() {
+  border: none;
+  background-color: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin cta() {
+  @include unstyled-button();
+  background: linear-gradient(to bottom, colors.$secondary, colors.$primary);
+  color: colors.$text-light;
+  padding: spacings.$spacing-400 spacings.$spacing-500;
+  border-radius: 100vmax;
+  font-weight: 500;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@mixin ol-list-item($index) {
+  background: colors.$background-medium;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px;
+  border-radius: 1rem;
+  padding: spacings.$spacing-400;
+  font-weight: 500;
+  position: relative;
+
+  &::before {
+    content: $index;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: colors.$primary;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: colors.$text-light;
+    border-radius: 100vmax;
+    text-align: center;
+  }
+}

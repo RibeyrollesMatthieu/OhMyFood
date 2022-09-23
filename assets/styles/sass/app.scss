@@ -1,5 +1,7 @@
 @use './../reset.css' as reset;
 @use './layout' as layout;
+@use './components' as components;
+@use './pages' as pages;
 
 @use './abstracts/typography' as typo;
 @use './abstracts/colors' as colors;
@@ -16,15 +18,18 @@ body {
   background-color: colors.$background-light;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   font-family: typo.$title_font;
 }
 
 .logo {
   font-family: typo.$logo_font;
+}
+
+.icon::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Font Awesome 5 Free';
 }

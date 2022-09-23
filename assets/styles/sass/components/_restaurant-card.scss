@@ -1,0 +1,88 @@
+@use './../abstracts/colors' as colors;
+@use './../abstracts/spacings' as spacings;
+@use './../abstracts/typography' as typo;
+@use './../abstracts/mixins' as mixins;
+
+.restaurant-card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &--new {
+    position: relative;
+
+    &::after {
+      content: 'Nouveau';
+      position: absolute;
+      top: spacings.$spacing-400;
+      right: spacings.$spacing-400;
+      padding: spacings.$spacing-100 spacings.$spacing-300;
+      background-color: colors.$tertiary;
+      color: colors.$tertiary-darker;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__image {
+    height: 10rem;
+    background-color: colors.$background-dark;
+    color: colors.$text-light;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: spacings.$spacing-400;
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__like-button {
+    @include mixins.unstyled-button();
+    margin-left: auto;
+    display: flex;
+    /* hide filled heart */
+    & > .icon:last-child::before {
+      opacity: 0;
+    }
+
+    &:hover {
+      & > .icon:first-child::before {
+        opacity: 0;
+      }
+      & > .icon:last-child::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__like {
+    &::before {
+      transition: opacity 0.25s;
+      content: '\f004';
+      font-size: typo.$scale-600;
+    }
+
+    &--filled::before {
+      transform-origin: top;
+      font-weight: 900;
+      color: colors.$primary;
+
+      @supports (-webkit-background-clip: text) and
+        (-webkit-text-fill-color: transparent) {
+        background: linear-gradient(
+          to bottom,
+          colors.$primary,
+          colors.$secondary
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
