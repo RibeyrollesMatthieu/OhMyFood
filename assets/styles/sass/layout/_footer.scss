@@ -1,0 +1,26 @@
+@use './../abstracts/colors' as colors;
+@use './../abstracts/spacings' as spacings;
+
+.primary-footer {
+  background-color: colors.$background-dark;
+  color: colors.$text-light;
+  padding: spacings.$spacing-400;
+
+  .logo {
+    display: block;
+    margin-bottom: spacings.$spacing-400;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    & > a {
+      margin-bottom: spacings.$spacing-200;
+
+      & > span {
+        width: spacings.$spacing-500;
+      }
+    }
+  }
+}

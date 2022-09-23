@@ -1,8 +1,30 @@
 @use './../reset.css' as reset;
-@use './abstracts/typography' as typo;
 @use './layout' as layout;
+
+@use './abstracts/typography' as typo;
+@use './abstracts/colors' as colors;
 
 a {
   text-decoration: inherit;
   color: inherit;
+}
+
+body {
+  font-family: typo.$base_font;
+  font-size: typo.$scale-400;
+  color: colors.$text-dark;
+  background-color: colors.$background-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: typo.$title_font;
+}
+
+.logo {
+  font-family: typo.$logo_font;
 }
