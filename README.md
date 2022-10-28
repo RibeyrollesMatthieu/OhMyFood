@@ -6,3 +6,5 @@ Commits with id..
    - base folder architecure
 - `#1`
   - global layout (e.g. header, footer)
+- `#2`
+  - more accurate layout (e.g. homepage, restaurant page)
