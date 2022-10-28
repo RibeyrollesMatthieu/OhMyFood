@@ -33,3 +33,34 @@ h1 {
 
   font-family: 'Font Awesome 5 Free';
 }
+
+.loader-container {
+  @keyframes loader {
+    0%,
+    99% {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    100% {
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: colors.$background-medium;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  display: flex;
+  animation: loader 3s 1 forwards;
+
+  & > .loader {
+    margin: auto;
+  }
+}

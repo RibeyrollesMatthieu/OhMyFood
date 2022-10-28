@@ -11,4 +11,15 @@
   font-weight: 500;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    background: linear-gradient(
+      to bottom,
+      colors.$secondary-light,
+      colors.$primary-light
+    );
+    box-shadow: rgba(50, 50, 93, 0.85) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
 }

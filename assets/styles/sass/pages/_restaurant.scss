@@ -46,6 +46,7 @@
         }
       }
 
+      opacity: 0;
       &__list {
         margin: spacings.$spacing-300 0 spacings.$spacing-500;
 
@@ -55,33 +56,29 @@
           position: relative;
           overflow: hidden;
           cursor: pointer;
+          padding: 0;
+          // opacity: 0;
 
-          &:hover::after {
-            // right: 0;
-            // transform: rotate(180deg);1
+          & > div:nth-child(1) {
+            max-width: 85%;
+            padding: spacings.$spacing-400;
+            transition: max-width 0.25s;
           }
 
-          &::after {
-            transition: right 0.25s, transform 0.25s;
-            content: '\f058';
-            background-color: colors.$tertiary;
-            top: 0;
-            bottom: 0;
-            right: -4rem;
-            position: absolute;
-            width: 4rem;
-            color: #fff;
+          &:hover {
+            & > div:nth-child(1) {
+              max-width: calc(85% - spacings.$spacing-600);
+            }
 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            .restaurant-meals__meal {
+              &-right {
+                max-width: calc(spacings.$spacing-600 * 2);
+              }
 
-            font-family: 'Font Awesome 5 Free';
-          }
-
-          & > div {
-            max-width: 90%;
-            padding-right: spacings.$spacing-400;
+              &-add > * {
+                transform: rotate(360deg);
+              }
+            }
           }
         }
 
@@ -104,9 +101,39 @@
             max-width: 100%;
           }
 
+          &-right {
+            transition: max-width 0.25s;
+            display: flex;
+            margin-left: auto;
+            max-width: 2.5rem;
+          }
+
           &-price {
             margin-left: auto;
             margin-top: auto;
+            padding: spacings.$spacing-400 spacings.$spacing-400
+              spacings.$spacing-400 0;
+          }
+
+          &-add {
+            transition: transform 0.25s;
+            display: flex;
+            width: spacings.$spacing-600;
+            // padding-left: calc(
+            //   spacings.$spacing-600 + calc(spacings.$spacing-400 * 2)
+            // );
+
+            & > * {
+              margin: auto;
+              background: colors.$background-light;
+              border-radius: 100vmax;
+              color: colors.$tertiary;
+              padding: spacings.$spacing-200;
+              transform: rotate(0);
+              transition: transform 0.25s;
+            }
+
+            background: colors.$tertiary;
           }
         }
       }
@@ -119,5 +146,17 @@
         margin: spacings.$spacing-400 auto spacings.$spacing-600;
       }
     }
+  }
+
+  $appear-duration: 0.25s;
+
+  &--a_la_francaise,
+  &--la_palette_du_gout,
+  &--le_delice_des_sens {
+    @include mixins.restaurant-items-appear(3, (3, 3, 3), 0.25s);
+  }
+
+  &--la_note_enchantee {
+    @include mixins.restaurant-items-appear(3, (4, 3, 3), 0.25s);
   }
 }

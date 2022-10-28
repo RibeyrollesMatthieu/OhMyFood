@@ -35,3 +35,47 @@
     text-align: center;
   }
 }
+
+@mixin restaurant-items-appear(
+  $sections,
+  $elements_per_section,
+  $appear_duration
+) {
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* FIXME: issue on 4,3,3 (prob. when not all the same values)  */
+  @for $i from 1 through $sections {
+    .restaurant-meals:nth-of-type(#{$i}) {
+      animation: appear
+        1s
+        calc(
+          calc($i * nth($elements_per_section, $i) * $appear-duration) +
+            calc($i * $appear-duration)
+            /* $i => $n for elements instead of menus */
+        )
+        1
+        forwards;
+
+      // @for $n from 1 through nth($elements_per_section, $i) {
+      //   .restaurant-meals__list-element:nth-child(#{$n}) {
+      //     animation: appear
+      //       1s
+      //       calc(
+      //         calc($i * nth($elements_per_section, $i) * $appear-duration) +
+      //           calc($n * $appear-duration)
+      //       )
+      //       1
+      //       forwards;
+      //   }
+      // }
+    }
+  }
+}
