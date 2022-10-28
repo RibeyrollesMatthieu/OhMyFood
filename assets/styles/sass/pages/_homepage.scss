@@ -47,7 +47,7 @@
       }
 
       &-item {
-        @include mixins.ol-list-item(attr(item));
+        @include mixins.ol-list-item(attr(data-item));
         transition: background 0.25s;
 
         &:hover {
