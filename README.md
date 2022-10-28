@@ -8,3 +8,5 @@ Commits with id..
   - global layout (e.g. header, footer)
 - `#2`
   - more accurate layout (e.g. homepage, restaurant page)
+- `#3`
+  - animations and transitions (e.g. loader, animations on restaurant pages)
