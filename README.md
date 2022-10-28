@@ -10,3 +10,5 @@ Commits with id..
   - more accurate layout (e.g. homepage, restaurant page)
 - `#3`
   - animations and transitions (e.g. loader, animations on restaurant pages)
+- `#4`
+  - fixes and verifications
