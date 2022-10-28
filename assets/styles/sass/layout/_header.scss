@@ -23,3 +23,9 @@
     margin: auto;
   }
 }
+
+@media only screen and (min-width: 37.5rem) {
+  .primary-header {
+    padding: spacings.$spacing-400 spacings.$spacing-600;
+  }
+}
