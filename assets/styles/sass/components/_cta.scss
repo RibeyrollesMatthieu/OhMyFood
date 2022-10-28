@@ -1,0 +1,14 @@
+@use './../abstracts/mixins' as mixins;
+@use './../abstracts/colors' as colors;
+@use './../abstracts/spacings' as spacings;
+
+.cta {
+  @include mixins.unstyled-button();
+  background: linear-gradient(to bottom, colors.$secondary, colors.$primary);
+  color: colors.$text-light;
+  padding: spacings.$spacing-400 spacings.$spacing-500;
+  border-radius: 100vmax;
+  font-weight: 500;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

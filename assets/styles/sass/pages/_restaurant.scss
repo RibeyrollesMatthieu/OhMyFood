@@ -1,0 +1,123 @@
+@use './../abstracts/colors' as colors;
+@use './../abstracts/spacings' as spacings;
+@use './../abstracts/typography' as typo;
+@use './../abstracts/mixins' as mixins;
+
+.restaurant-page {
+  & > img {
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__container {
+    border-radius: spacings.$spacing-500 spacings.$spacing-500 0 0;
+    padding: spacings.$spacing-400;
+    background: colors.$background-light;
+    transform: translate(0, calc(spacings.$spacing-500 * -1));
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    font-family: typo.$title_font;
+    margin-bottom: spacings.$spacing-400;
+
+    & > .like-button {
+      margin-left: auto;
+    }
+  }
+
+  &__content {
+    .restaurant-meals {
+      &__title {
+        font-weight: 300;
+        font-size: typo.$scale-300;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: spacings.$spacing-300;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 75%;
+          height: 2px;
+          background-color: colors.$tertiary;
+        }
+      }
+
+      &__list {
+        margin: spacings.$spacing-300 0 spacings.$spacing-500;
+
+        &-element {
+          @include mixins.ul-list-item(colors.$text-light);
+          display: flex;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+
+          &:hover::after {
+            // right: 0;
+            // transform: rotate(180deg);1
+          }
+
+          &::after {
+            transition: right 0.25s, transform 0.25s;
+            content: '\f058';
+            background-color: colors.$tertiary;
+            top: 0;
+            bottom: 0;
+            right: -4rem;
+            position: absolute;
+            width: 4rem;
+            color: #fff;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: 'Font Awesome 5 Free';
+          }
+
+          & > div {
+            max-width: 90%;
+            padding-right: spacings.$spacing-400;
+          }
+        }
+
+        & > * + * {
+          margin-top: spacings.$spacing-400;
+        }
+
+        .restaurant-meals__meal {
+          &-name,
+          &-price {
+            font-weight: 500;
+          }
+
+          &-description,
+          &-name {
+            font-size: typo.$scale-300;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 100%;
+          }
+
+          &-price {
+            margin-left: auto;
+            margin-top: auto;
+          }
+        }
+      }
+    }
+
+    .cta__container {
+      display: flex;
+
+      .cta {
+        margin: spacings.$spacing-400 auto spacings.$spacing-600;
+      }
+    }
+  }
+}

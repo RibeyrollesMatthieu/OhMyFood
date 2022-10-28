@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONTS IMPORTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- END FONT IMPORTS -->
+
+    <!-- CDNS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- END CDNS -->
+
+    <link rel="stylesheet" href="./../../assets/styles/app.min.css" />
+
+    <title>OhMyFood!</title>
+  </head>
+  <body>
+    <header class="primary-header primary-header--with-back-button">
+      <a
+        href="/"
+        class="primary-header__back-button fa-solid fa-arrow-left fa-xl"
+      ></a>
+      <img
+        class="logo"
+        src="./../../assets/images/logo/ohmyfood@2x.svg"
+        alt="ohmyfood logo"
+      />
+    </header>
+
+    <div class="restaurant-page">
+      <img
+        src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+        alt=""
+      />
+
+      <div class="restaurant-page__container">
+        <div class="restaurant-page__header">
+          <h2 class="restaurant-page__name">Le délice des sens</h2>
+          <button class="like-button fa-stack fa-lg">
+            <span class="like like--empty icon fa-stack-1x"></span>
+            <span class="like like--filled icon fa-stack-1x"></span>
+          </button>
+        </div>
+
+        <div class="restaurant-page__content">
+          <div class="restaurant-meals">
+            <h3 class="restaurant-meals__title">Entrées</h3>
+
+            <ul class="restaurant-meals__list">
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Tartare de thon</p>
+                  <p class="restaurant-meals__meal-description">
+                    Assaisonné au yuzu
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">25€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">
+                    Bouchée de homard croustillant
+                  </p>
+                  <p class="restaurant-meals__meal-description">
+                    Et sa farandole de petits légumes
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">35€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Velouté de cèpes</p>
+                  <p class="restaurant-meals__meal-description">Aux truffes</p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">20€</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="restaurant-meals">
+            <h3 class="restaurant-meals__title">Plats</h3>
+
+            <ul class="restaurant-meals__list">
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">
+                    Poulet rôti aux herbes de Provence
+                  </p>
+                  <p class="restaurant-meals__meal-description">
+                    Et sa crème de truffe
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">40€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Langouste rôtie</p>
+                  <p class="restaurant-meals__meal-description">
+                    Et ses légumes de saison
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">35€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Côte de boeuf Angus</p>
+                  <p class="restaurant-meals__meal-description">
+                    Et sa purée de panais
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">44€</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="restaurant-meals">
+            <h3 class="restaurant-meals__title">Desserts</h3>
+
+            <ul class="restaurant-meals__list">
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">
+                    Farandole de desserts
+                  </p>
+                  <p class="restaurant-meals__meal-description">Du chef</p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">18€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Crème brulée</p>
+                  <p class="restaurant-meals__meal-description">Revisitée</p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">22€</span>
+              </li>
+              <li class="restaurant-meals__list-element">
+                <div>
+                  <p class="restaurant-meals__meal-name">Tiramisu</p>
+                  <p class="restaurant-meals__meal-description">
+                    À la noisette
+                  </p>
+                </div>
+
+                <span class="restaurant-meals__meal-price">23€</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cta__container">
+            <button class="cta">Commander</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="primary-footer">
+      <a href="/" class="logo">ohmyfood</a>
+
+      <div class="primary-footer__links">
+        <a href="/submit">
+          <span class="fa-solid fa-utensils"></span>
+          Proposer un restaurant
+        </a>
+
+        <a href="/partnership">
+          <span class="fa-solid fa-handshake-angle"></span>
+          Devenir partenaire
+        </a>
+
+        <a href="/legals"> Mentions légales </a>
+        <a href="mailto: contact@ohmyfood.com"> Contact </a>
+      </div>
+    </footer>
+  </body>
+</html>

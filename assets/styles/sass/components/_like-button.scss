@@ -1,0 +1,47 @@
+@use './../abstracts/mixins' as mixins;
+@use './../abstracts/typography' as typo;
+@use './../abstracts/colors' as colors;
+
+.like-button {
+  @include mixins.unstyled-button();
+  margin-left: auto;
+  display: flex;
+  /* hide filled heart */
+  & > .icon:last-child::before {
+    opacity: 0;
+  }
+
+  &:hover {
+    & > .icon:first-child::before {
+      opacity: 0;
+    }
+    & > .icon:last-child::before {
+      opacity: 1;
+    }
+  }
+
+  & > .like {
+    &::before {
+      transition: opacity 0.25s;
+      content: '\f004';
+      font-size: typo.$scale-600;
+    }
+
+    &--filled::before {
+      transform-origin: top;
+      font-weight: 900;
+      color: colors.$primary;
+
+      @supports (-webkit-background-clip: text) and
+        (-webkit-text-fill-color: transparent) {
+        background: linear-gradient(
+          to bottom,
+          colors.$primary,
+          colors.$secondary
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -33,8 +33,7 @@
       font-weight: 500;
     }
 
-    &__cta {
-      @include mixins.cta();
+    .cta {
       margin-bottom: spacings.$spacing-500;
     }
   }
