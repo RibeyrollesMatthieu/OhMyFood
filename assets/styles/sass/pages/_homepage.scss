@@ -28,8 +28,7 @@
 
     &__description {
       color: colors.$text-medium;
-      margin-top: spacings.$spacing-400;
-      margin-bottom: spacings.$spacing-500;
+      margin: spacings.$spacing-400 auto spacings.$spacing-500;
       font-weight: 500;
     }
 
@@ -49,11 +48,21 @@
 
       &-item {
         @include mixins.ol-list-item(attr(item));
+        transition: background 0.25s;
+
+        &:hover {
+          background: colors.$secondary-pale;
+
+          & > span {
+            color: colors.$primary;
+          }
+        }
 
         & > span {
           width: 1rem;
           margin: 0 spacings.$spacing-400 0;
           color: colors.$text-medium;
+          transition: color 0.25s;
         }
       }
     }
@@ -65,6 +74,59 @@
 
     .restaurant-card + .restaurant-card {
       margin-top: spacings.$spacing-400;
+    }
+  }
+}
+
+@media only screen and (min-width: 37.5rem) {
+  .homepage {
+    .section-title {
+      text-align: center;
+      margin: spacings.$spacing-500 auto spacings.$spacing-600;
+    }
+
+    .helper,
+    .discover {
+      padding: spacings.$spacing-500 spacings.$spacing-600 spacings.$spacing-600;
+    }
+
+    .discover-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: spacings.$spacing-500;
+
+      .restaurant-card {
+        width: calc(50% - spacings.$spacing-500);
+        height: 20rem;
+
+        &__image {
+          height: 12.5rem;
+        }
+      }
+
+      .restaurant-card + .restaurant-card {
+        margin-top: 0;
+      }
+    }
+
+    .helper {
+      &__list {
+        display: flex;
+        gap: spacings.$spacing-600;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & > li {
+          flex: 1;
+          min-width: 17.5rem;
+          max-width: fit-content;
+        }
+
+        & > * + * {
+          margin-top: 0;
+        }
+      }
     }
   }
 }

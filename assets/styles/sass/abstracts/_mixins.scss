@@ -57,7 +57,9 @@
       animation: appear
         1s
         calc(
-          calc($i * nth($elements_per_section, $i) * $appear-duration) +
+          calc(
+              calc($i - 1) * nth($elements_per_section, $i) * $appear-duration
+            ) +
             calc($i * $appear-duration)
             /* $i => $n for elements instead of menus */
         )

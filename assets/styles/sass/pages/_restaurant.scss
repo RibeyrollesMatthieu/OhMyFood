@@ -119,9 +119,6 @@
             transition: transform 0.25s;
             display: flex;
             width: spacings.$spacing-600;
-            // padding-left: calc(
-            //   spacings.$spacing-600 + calc(spacings.$spacing-400 * 2)
-            // );
 
             & > * {
               margin: auto;
@@ -158,5 +155,13 @@
 
   &--la_note_enchantee {
     @include mixins.restaurant-items-appear(3, (4, 3, 3), 0.25s);
+  }
+}
+
+@media only screen and (min-width: 37.5rem) {
+  .restaurant-page {
+    &__container {
+      padding: spacings.$spacing-600;
+    }
   }
 }
